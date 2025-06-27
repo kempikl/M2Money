@@ -1,3 +1,14 @@
+---
+title: "M2Money"
+emoji: "🏠"
+colorFrom: "blue"
+colorTo: "green"
+sdk: streamlit
+sdk_version: "1.24.0"
+app_file: app.py
+pinned: false
+---
+
 # PJATK SUML Project – M2Money
 
 **M2Money** to aplikacja webowa do prognozowania cen mieszkań w największych miastach Polski. Projekt powstał w ramach kursu **Data Science / SUML** na Polsko-Japońskiej Akademii Technik Komputerowych.

@@ -11,9 +11,7 @@ pinned: false
 
 # PJATK SUML Project – M2Money
 
-**M2Money** to aplikacja webowa do prognozowania cen mieszkań w największych miastach Polski. Projekt powstał w ramach kursu **Data Science / SUML** na Polsko-Japońskiej Akademii Technik Komputerowych.
-
----
+Link do aplikacji na Hugging Face Spaces: https://huggingface.co/spaces/kempikl/M2Money
 
 ## 🎯 Cel projektu
 

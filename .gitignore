@@ -1,0 +1,38 @@
+# Ignorowanie plików i katalogów specyficznych dla Pythona
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Środowiska Conda i pliki z hasłami
+.m2money/
+.env
+
+# Dane
+data/
+model/model.pkl
+evaluation/
+
+# Logi i pliki tymczasowe
+*.log
+
+# Dystrybucje i budowy
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+
+# IDE i systemy plików
+.vscode/
+.DS_Store  # macOS
+.idea
+
+# Docker
+*.dockerignore
+
+# Hugging Face cache
+.huggingface/
+
+# Notebooki Jupyter
+.ipynb_checkpoints/

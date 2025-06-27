@@ -1,0 +1,12 @@
+name: m2money
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pandas
+  - scikit-learn
+  - joblib
+  - streamlit
+

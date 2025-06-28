@@ -10,7 +10,6 @@ __pycache__/
 .env
 
 # Dane
-data/
 evaluation/
 
 # Logi i pliki tymczasowe

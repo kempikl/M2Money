@@ -1,9 +1,8 @@
-name: Deploy to Hugging Face Space
+name: Retrain & Deploy to Hugging Face Space
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,12 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Pobranie kodu (pełna historia i LFS)
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
           lfs: true
 
+      # 2. Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Instalacja zależności
+      - name: Install dependencies
+        run: pip install --no-cache-dir -r requirements.txt
+
+      # 4. Trenowanie modelu
+      - name: Train model
+        run: python train_model.py
+
+      # 5. Commit nowego modelu (jeśli różni się od poprzedniego)
+      - name: Commit updated model
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add model/model.pkl
+          git commit -m "CI: Retrain model on deploy" || echo "No changes to commit"
+
+      # 6. Push do Hugging Face Spaces
       - name: Push to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
